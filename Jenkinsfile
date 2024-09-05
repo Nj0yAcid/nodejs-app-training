@@ -20,7 +20,7 @@ pipeline{
         stage("Upload the artifact in JFrog"){
             steps{
             sh 'curl -uadmin:AP8gcgmmset5jeYChTJYDN6XmDd -T \
-            my-app-*.tgz "http://ec2-54-167-127-179.compute-1.amazonaws.com:8081/artifactory/nodejs-app/myapp_${BUILD_ID}"'
+            my-app-*.tgz "http://ec2-54-167-127-179.compute-1.amazonaws.com:8081/artifactory/nodejs-app/myapp_${BUILD_ID}.tgz"'
             }
         }
     }
