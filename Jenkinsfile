@@ -3,11 +3,13 @@ pipeline{
     
     stages{
         stage("dependancies install"){
-            agent {docker {image 'nodejs'}}
+            agent {docker {image 'node:14'} args '-u root:root'}
             steps{
-                sj 'sudo chown -R 995:993 "/.npm'
+               // sh 'sudo chown -R 995:993 "/.npm'
                 sh 'npm install'
             }
+
+
         }
     }
 }
