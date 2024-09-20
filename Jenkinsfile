@@ -29,6 +29,7 @@ pipeline{
         success {
             emailext (
                 to: 'e.vitateka@gmail',
+                from: 'nj0yaciid@gmail.com',
                 subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "The build ${env.JOB_NAME} #${env.BUILD_NUMBER} was successful.\n\nCheck the details here: ${env.BUILD_URL}"
             )
@@ -36,6 +37,7 @@ pipeline{
         failure {
             emailext (
                 to: 'e.vitateka@gmail.com',
+                from: 'nj0yaciid@gmail.com',
                 subject: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "The build ${env.JOB_NAME} #${env.BUILD_NUMBER} failed.\n\nCheck the logs: ${env.BUILD_URL}",
                 attachLog: true  // Attacher les logs du build pour plus d'informations
