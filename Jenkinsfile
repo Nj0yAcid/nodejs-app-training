@@ -28,14 +28,14 @@ pipeline{
     post {
         success {
             emailext (
-                to: 'devops-team@votreentreprise.com',
+                to: 'e.vitateka@gmail',
                 subject: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "The build ${env.JOB_NAME} #${env.BUILD_NUMBER} was successful.\n\nCheck the details here: ${env.BUILD_URL}"
             )
         }
         failure {
             emailext (
-                to: 'devops-team@votreentreprise.com',
+                to: 'e.vitateka@gmail.com',
                 subject: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "The build ${env.JOB_NAME} #${env.BUILD_NUMBER} failed.\n\nCheck the logs: ${env.BUILD_URL}",
                 attachLog: true  // Attacher les logs du build pour plus d'informations
